@@ -12,25 +12,30 @@
     <fieldset>
     <h2><u>User Details</u></h2>
     <form action="form.php">
-    <p><b>Enter your name : </b><input type="username"placeholder="First Name"><input text="username"placeholder="Lastname"></p>
+    <p><b>Enter your name : </b><input type="username"placeholder="First Name" required ><input text="username"placeholder="Lastname" required></p>
     <p><b>Gender :</b><label for="id1">
         <input type="radio"value="Male"name="gender"id="id1">Male
         <input type="radio"value="Female"name="gender"id="id1">Female
         <input type="radio"value="Prefer Not to Say"name="gender"id="id1">Prefer Not to Say
     </label></p>
     <p><b>Adress : </b><input type="Adress"placeholder="Enter your Adress here"></p>
-    <p><b>E-mail : </b><input type="E-mail"placeholder="Enter E-mail here"></p>
-    <p><b>Pincode : </b><input type="Pincode"placeholder="Enter Pincode"></p>
-</form>
+    <p><b>E-mail : </b><input type="email"name="email"id="email"required></p>
+    <p><b>Pincode : </b><input type="number"name="Enter Pincode"id="Pincode"></p>
 </fieldset>
 <fieldset>
 <h2><u>Payment Details</u></h2>
-<form action="form.php">
-<p><b>Card Details : </b><input type="card"placeholder="Enter Card Details"></p>
-<p><b>Card Number : </b><input type="card"placeholder="Enter Card Number"></p>
-<p><b>Expiration Date : </b><input type="card"placeholder="month"><input type="card"placeholder="year"></p>
-<p><b>CVV : </b><input type="card"placeholder="Enter cvv"></p>
+<p><b>Card Details : </b><select name="card_type"id="card" required>
+    <option value="">Select a Card Type</option>
+    <option value="Rupay">Rupay</option>
+    <option value="Mastercard">Mastercard</option>
+    <option value="Visa">Visa</option>
+    <option value="PayPal">PayPal</option> 
+</select></p>
+<p><b>Card Number : </b><input type="number" name="card_number"id="card_number"required maxlength="16"></p>
+<p><b>Expiration Date : </b><input type="date"name="Expiration_date"id="Expiration_date"required></p>
+<p><b>CVV : </b><input type="number"name="CVV"id="CVV"required maxlength="3"></p>
 <input type="submit"value="Pay Now">
+<input type="reset"value="reset">
 </form>
 </fieldset>
 </fieldset>
